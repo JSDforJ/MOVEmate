@@ -36,7 +36,12 @@ def print_result(result: PoseLandmarkerResult, output_image: mp.Image, timestamp
     conn.sendall(np.array(data))
     if conn.recv(1)[0] == 1:
         print("Disconnected due to server message")
+        killl()
+        print("Released camera")
+        cv.destroyAllWindows()
+        print("Closed window")
         conn.close()
+        print("Closed connection")
         exit()
 
 
@@ -50,6 +55,8 @@ with PoseLandmarker.create_from_options(options) as landmarker:
     frameCount = int(cap.get(cv.CAP_PROP_FRAME_COUNT))
     frameWidth = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
     frameHeight = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
+    def killl():
+        cap.release()
     if not cap.isOpened():
         print("Cannot open camera")
         exit()
