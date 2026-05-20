@@ -40,7 +40,7 @@ def print_result(result: PoseLandmarkerResult, output_image: mp.Image, timestamp
         print("Released camera")
         cv.destroyAllWindows()
         print("Closed window")
-        conn.close()
+        conn.close()    
         print("Closed connection")
         exit()
 
