@@ -9,7 +9,7 @@ import os
 HOST = "127.0.0.1"
 PORT = 6767
 
-model_path = os.path.dirname(os.path.realpath(__file__)) + "/../pose_landmarker_heavy.task"
+model_path = os.path.dirname(os.path.realpath(__file__)) + "/../pose_landmarker.task"
 
 BaseOptions = mp.tasks.BaseOptions
 PoseLandmarker = mp.tasks.vision.PoseLandmarker
